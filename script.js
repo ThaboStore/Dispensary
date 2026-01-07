@@ -204,8 +204,11 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   };
 
-  const closeUserInfoModal = () =>
-    userInfoForm.reset() && (userInfoModal.style.display = "none");
+ const closeUserInfoModal = () => {
+  userInfoForm.reset();
+  userInfoModal.style.display = "none";
+};
+
   userCancelBtn.addEventListener("click", closeUserInfoModal);
 
   /* =========================
