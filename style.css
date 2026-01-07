@@ -1,0 +1,642 @@
+/* =========================
+   Global
+========================= */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+/* =========================
+   Header
+========================= */
+header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(0deg, #000000 0%, #0b3d2e 45%, #0f9f50 100%);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  position: relative; /* required for absolute centering */
+}
+
+/* Brand Name – true center (desktop & mobile) */
+#brandName {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: "Courier New", Courier, monospace;
+
+  /* Black outline */
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000, 0 2px 0 #000, 2px 0 0 #000, -2px 0 0 #000, 0 -2px 0 #000;
+}
+
+/* =========================
+   Main Grid
+========================= */
+main {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1000px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Cards
+========================= */
+.card {
+  border-radius: 12px;
+  border: black 2px solid;
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.card strong {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  display: block;
+  color: white; /* matches your card text */
+}
+
+.card ul {
+  margin: -1px 0;
+  color: white; /* matches card text */
+}
+
+.card ul li {
+  margin-bottom: 4px; /* spacing between items */
+  font-size: 0.9rem;
+}
+
+.card select {
+  margin: 8px 0;
+  padding: 6px;
+  border-radius: 6px;
+  border: black 1px solid;
+  font-size: 0.9rem;
+  background-color: #ffffff; /* green background */
+  color: rgb(0, 0, 0); /* text color */
+  cursor: pointer;
+  appearance: none; /* removes default arrow styling in some browsers */
+}
+
+.card select option {
+  background-color: #fff; /* dropdown background when expanded */
+  color: black; /* text color in dropdown */
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  margin-top: 12px; /* move image slightly lower */
+}
+
+.card button {
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: black 1px solid;
+  background: linear-gradient(0deg, red, orange);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card button:hover {
+  background: linear-gradient(0deg, red, orange);
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 14px #ff0000;
+  filter: brightness(1.1);
+}
+
+.card .price {
+  margin-top: auto;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 2px 2px 3px black;
+  text-align: center; /*Move slightly away from right*/
+}
+
+/* =========================
+   Product Card Gradients – 35 Cards
+========================= */
+/* =========================
+   Product Card Gradients – Dark Diagonal
+========================= */
+.card:nth-child(1) {
+  background: linear-gradient(135deg, #1fbf75 0%, #0e5a3c 45%, #000000 100%);
+}
+.card:nth-child(2) {
+  background: linear-gradient(135deg, #2fa4ff 0%, #123a5f 45%, #000000 100%);
+}
+.card:nth-child(3) {
+  background: linear-gradient(135deg, #a855f7 0%, #3b1a5a 45%, #000000 100%);
+}
+.card:nth-child(4) {
+  background: linear-gradient(135deg, #22c55e 0%, #14532d 45%, #000000 100%);
+}
+.card:nth-child(5) {
+  background: linear-gradient(135deg, #f59e0b 0%, #5a3a10 45%, #000000 100%);
+}
+.card:nth-child(6) {
+  background: linear-gradient(135deg, #6366f1 0%, #2a2e6f 45%, #000000 100%);
+}
+.card:nth-child(7) {
+  background: linear-gradient(135deg, #ef4444 0%, #5a1a1a 45%, #000000 100%);
+}
+.card:nth-child(8) {
+  background: linear-gradient(135deg, #14b8a6 0%, #134e4a 45%, #000000 100%);
+}
+.card:nth-child(9) {
+  background: linear-gradient(135deg, #eab308 0%, #4d3b0f 45%, #000000 100%);
+}
+.card:nth-child(10) {
+  background: linear-gradient(135deg, #8b5cf6 0%, #35205f 45%, #000000 100%);
+}
+.card:nth-child(11) {
+  background: linear-gradient(135deg, #9ca3af 0%, #374151 45%, #000000 100%);
+}
+.card:nth-child(12) {
+  background: linear-gradient(135deg, #f43f5e 0%, #4c0f1f 45%, #000000 100%);
+}
+.card:nth-child(13) {
+  background: linear-gradient(135deg, #06b6d4 0%, #083344 45%, #000000 100%);
+}
+.card:nth-child(14) {
+  background: linear-gradient(135deg, #84cc16 0%, #365314 45%, #000000 100%);
+}
+.card:nth-child(15) {
+  background: linear-gradient(135deg, #16a34a 0%, #14532d 45%, #000000 100%);
+}
+.card:nth-child(16) {
+  background: linear-gradient(135deg, #ec4899 0%, #4a0f2f 45%, #000000 100%);
+}
+.card:nth-child(17) {
+  background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 45%, #000000 100%);
+}
+.card:nth-child(18) {
+  background: linear-gradient(135deg, #2dd4bf 0%, #134e4a 45%, #000000 100%);
+}
+.card:nth-child(19) {
+  background: linear-gradient(135deg, #f97316 0%, #4a2a0f 45%, #000000 100%);
+}
+.card:nth-child(20) {
+  background: linear-gradient(135deg, #60a5fa 0%, #1e3a8a 45%, #000000 100%);
+}
+.card:nth-child(21) {
+  background: linear-gradient(135deg, #6b7280 0%, #1f2933 45%, #000000 100%);
+}
+.card:nth-child(22) {
+  background: linear-gradient(135deg, #facc15 0%, #4a3a0f 45%, #000000 100%);
+}
+.card:nth-child(23) {
+  background: linear-gradient(135deg, #38bdf8 0%, #0c4a6e 45%, #000000 100%);
+}
+.card:nth-child(24) {
+  background: linear-gradient(135deg, #9333ea 0%, #3b0764 45%, #000000 100%);
+}
+.card:nth-child(25) {
+  background: linear-gradient(135deg, #fde047 0%, #4a3f0f 45%, #000000 100%);
+}
+.card:nth-child(26) {
+  background: linear-gradient(135deg, #fb7185 0%, #4c0519 45%, #000000 100%);
+}
+.card:nth-child(27) {
+  background: linear-gradient(135deg, #2dd4bf 0%, #0f3f3a 45%, #000000 100%);
+}
+.card:nth-child(28) {
+  background: linear-gradient(135deg, #eab308 0%, #422006 45%, #000000 100%);
+}
+.card:nth-child(29) {
+  background: linear-gradient(135deg, #a3e635 0%, #365314 45%, #000000 100%);
+}
+.card:nth-child(30) {
+  background: linear-gradient(135deg, #22c55e 0%, #064e3b 45%, #000000 100%);
+}
+.card:nth-child(31) {
+  background: linear-gradient(135deg, #f472b6 0%, #4a044e 45%, #000000 100%);
+}
+.card:nth-child(32) {
+  background: linear-gradient(135deg, #2563eb 0%, #172554 45%, #000000 100%);
+}
+.card:nth-child(33) {
+  background: linear-gradient(135deg, #fb923c 0%, #431407 45%, #000000 100%);
+}
+.card:nth-child(34) {
+  background: linear-gradient(135deg, #38bdf8 0%, #082f49 45%, #000000 100%);
+}
+.card:nth-child(35) {
+  background: linear-gradient(135deg, #9ca3af 0%, #111827 45%, #000000 100%);
+}
+
+/* =========================
+   Cart Modal
+========================= */
+/* =========================
+   Cart Panel – Themed
+========================= */
+#cartModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 360px;
+  height: 100%;
+  background: linear-gradient(180deg, #000000 0%, #0b3d2e 45%, #0f9f50 100%);
+  color: #ffffff;
+  box-shadow: -6px 0 18px rgba(0, 0, 0, 0.6);
+  padding: 16px;
+  overflow-y: auto;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cart Title */
+#cartModal h2 {
+  text-align: center;
+  margin: 5px 0 15px;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 3px black;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding-bottom: 10px;
+}
+
+/* Cart Items */
+#cartItems {
+  padding: 0;
+  margin: 0;
+}
+
+/* Quantity Controls */
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.cart-qty button {
+  background: linear-gradient(0deg, #0f9f50, #000000);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cart-qty button:hover {
+  filter: brightness(1.2);
+}
+
+/* Cart Total */
+.cart-total {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: right;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #bbf7d0;
+}
+
+/* Cart Actions */
+.cart-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-bottom: 10px;
+}
+
+.cart-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Complete Order */
+.cart-actions .checkout {
+  background: linear-gradient(0deg, #0f9f50, #000000);
+  color: white;
+}
+
+.cart-actions .checkout:hover {
+  box-shadow: 0 6px 14px #0f9f50;
+  transform: translateY(-1px);
+}
+
+/* Back Button */
+.cart-actions .back {
+  background: linear-gradient(0deg, #0f9f50, #000000);
+  color: white;
+}
+
+.cart-actions .back:hover {
+  box-shadow: 0 6px 14px #0f9f50;
+  transform: translateY(-1px);
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem; /* smaller, cleaner */
+}
+
+.cart-table th {
+  text-align: left;
+  padding: 6px 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: #d1fae5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.cart-table td {
+  padding: 6px 4px;
+  vertical-align: middle;
+}
+
+.cart-product strong {
+  font-size: 0.82rem;
+}
+
+.cart-product small {
+  font-size: 0.7rem;
+  color: #d1d5db;
+}
+
+/* Qty controls tighter */
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cart-qty span {
+  min-width: 18px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.cart-qty button {
+  padding: 2px 6px;
+  font-size: 0.75rem;
+}
+
+/* =========================
+   User Info Modal
+========================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin: 0 0 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.modal-content .required {
+  color: red;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.modal-buttons button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-buttons button[type="submit"] {
+  background: #0f9f50;
+  color: #fff;
+}
+
+.modal-buttons button[type="button"] {
+  background: #ccc;
+}
+
+/* For all scrollable elements */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+/* Webkit browsers: Chrome, Safari, Edge */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================
+Mobile Header Tweaks
+========================= */
+@media (max-width: 700px) {
+  header {
+    padding: 10px 10px; /* reduce top padding */
+  }
+
+  #brandName {
+    font-size: 1.1rem;
+    top: 0px; /* optional if using absolute positioning */
+  }
+
+  /* Push filters + cart slightly below brand, not all the way down */
+  #brandFilter,
+  #sortFilter,
+  #cartBtn {
+    margin-top: 25px; /* instead of auto */
+  }
+}
+
+/* =========================
+   Header Controls (Filters + Cart)
+========================= */
+#brandFilter,
+#sortFilter {
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+  min-width: 120px;
+}
+
+/* Remove default arrow quirks */
+#brandFilter,
+#sortFilter {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, white 50%),
+    linear-gradient(135deg, white 50%, transparent 50%);
+  background-position: calc(100% - 16px) 50%, calc(100% - 10px) 50%;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 28px;
+}
+
+/* Hover + focus */
+#brandFilter:hover,
+#sortFilter:hover,
+#brandFilter:focus,
+#sortFilter:focus {
+  background: rgba(0, 0, 0, 0.75);
+  border-color: #0f9f50;
+  outline: none;
+
+  box-shadow: 0 6px 14px #0f9f50;
+  filter: brightness(1.1);
+}
+
+/* Dropdown options */
+#brandFilter option,
+#sortFilter option {
+  background: linear-gradient(-145deg, #0f9f50, #000000);
+  color: #fff;
+}
+
+/* =========================
+   Cart Button
+========================= */
+#cartBtn {
+  background: linear-gradient(0deg, #0f9f50, #000000);
+  color: #ffffff;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 7px 14px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Hover effect */
+#cartBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px #0f9f50;
+  filter: brightness(1.1);
+}
+
+/* Active click */
+#cartBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 700px) {
+  #brandFilter,
+  #sortFilter {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+    min-width: 100px;
+  }
+
+  #cartBtn {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(15, 159, 80, 0.15) 0%,
+    rgba(11, 61, 46, 0.25) 35%,
+    #0a0a0a 75%
+  );
+
+  background-attachment: fixed;
+}
+
+#cartModal {
+  background: linear-gradient(
+    180deg,
+    #000000 0%,
+    #0b3d2e 45%,
+    #0f9f50 100%
+  ) !important;
+  color: #ffffff;
+}

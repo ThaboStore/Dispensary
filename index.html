@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thabo's Dispensary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div id="brandName">Thabo's Dispensary</div>
+
+      <select id="brandFilter">
+        <option value="">All Brands</option>
+      </select>
+
+      <select id="sortFilter">
+        <option value="">Sort By</option>
+        <option value="puffs-desc">Puffs (High → Low)</option>
+        <option value="puffs-asc">Puffs (Low → High)</option>
+        <option value="nic-desc">Nicotine (High → Low)</option>
+        <option value="nic-asc">Nicotine (Low → High)</option>
+        <option value="price-desc">Price (High → Low)</option>
+        <option value="price-asc">Price (Low → High)</option>
+      </select>
+
+      <button id="cartBtn" style="margin-left: auto">🛒 Cart</button>
+    </header>
+
+    <main id="grid"></main>
+
+    <div id="userInfoModal" class="modal">
+      <div class="modal-content">
+        <h2>Enter Your Details</h2>
+        <form id="userInfoForm">
+          <label>Full Name:<span class="required">*</span></label>
+          <input type="text" id="userName" required />
+
+          <label>Phone Number:<span class="required">*</span></label>
+          <input type="tel" id="userPhone" required />
+
+          <label>Full Address:<span class="required">*</span></label>
+          <textarea id="userAddress" rows="3" required></textarea>
+
+          <label>Landmark (Optional):</label>
+          <input type="text" id="userLandmark" />
+
+          <div class="modal-buttons">
+            <button type="submit">Proceed</button>
+            <button type="button" id="userCancelBtn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div
+      id="cartModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 320px;
+        height: 100%;
+        padding: 15px;
+        overflow: auto;
+      "
+    >
+      <h2>Your Cart</h2>
+
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody id="cartItems"></tbody>
+      </table>
+
+      <div class="cart-total" id="cartTotal">Total: ₹0</div>
+
+      <div class="cart-actions">
+        <button class="checkout" onclick="exportCart()">Complete Order</button>
+        <button class="back" onclick="closeCart()">Back</button>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
